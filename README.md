@@ -21,14 +21,14 @@ openssl x509 -in 'Google Internet Authority G2.cer' -inform DER -text -noout
 2. 将签名值[Signature data]用上级公钥解密，得Hash2
 3. 将Hash1和Hash2对比是否一致
 
-验证代码见VerifyCA Demo，里面有直接使用OpenSSL函数X509_verify验证，还有一个手动验证的例子。
+验证代码例子见VerifyCA工程，里面有直接使用OpenSSL函数X509_verify验证的例子，还有一个手动验证的例子。
 ```objc
 //X509_verify() -> ASN1_item_verify() -> EVP_DigestVerifyFinal() -> EVP_DigestFinal_ex(), EVP_PKEY_verify() -> pkey_rsa_verify() -> RSA_verify() -> int_rsa_verify() -> RSA_public_decrypt, d2i_X509_SIG()
 //int X509_verify(X509 *a, EVP_PKEY *r);
 int verify = X509_verify(certG2, pub_key);
 ```
 
-如图谷歌的二级证书，证书文件Google Internet Authority G2.cer
+证书预览和文件数据如图
 ![VerifyCA](Image/Google Internet Authority G2.png)
 
 #### 3. 如何从浏览器获取证书
@@ -36,5 +36,6 @@ int verify = X509_verify(certG2, pub_key);
 ![VerifyCA](Image/ChromeGetCA_1.png)
 ![VerifyCA](Image/ChromeGetCA_2.png)
 ![VerifyCA](Image/ChromeGetCA_3.png)
+![VerifyCA](Image/ChromeGetCA_4.png)
 
 
