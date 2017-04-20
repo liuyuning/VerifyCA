@@ -12,7 +12,7 @@ openssl x509 -in 'Google Internet Authority G2.cer' -inform DER -text -noout
 ```
 用谷歌的二级证书作为例子，证书文件Google Internet Authority G2.cer，从图中可以看出证书文件的结构：
 
-![VerifyCA]("Image/Google Internet Authority G2 bin.png")
+![VerifyCA](Image/Google%20Internet%20Authority%20G2%20bin.png)
 
 #### 2、证书验证过程
 所需数据：原文、签名值、公钥（原文和签名值都在同一个证书里，如图；公钥是指签发者Issuer的公钥，即上一级证书里的公钥，如果是根证书那就是自己的公钥）
@@ -29,7 +29,7 @@ int verify = X509_verify(certG2, pub_key);
 ```
 
 证书预览和文件数据如图
-![VerifyCA]("Image/Google Internet Authority G2.png")
+![VerifyCA](Image/Google%20Internet%20Authority%20G2.png")
 
 #### 3. 如何从浏览器获取证书
 
