@@ -29,7 +29,7 @@ int verify = X509_verify(certG2, pub_key);
 ```
 
 证书预览和文件数据如图
-![VerifyCA](Image/Google%20Internet%20Authority%20G2.png")
+![VerifyCA](Image/Google%20Internet%20Authority%20G2.png)
 
 #### 3. 如何从浏览器获取证书
 
